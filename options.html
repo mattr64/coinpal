@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Coiner Options</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Coiner Settings</h1>
+
+    <div class="setting-group">
+      <label for="targetCurrency">Target Currency:</label>
+      <select id="targetCurrency">
+        <option value="GBP">GBP - British Pound</option>
+        <option value="USD">USD - US Dollar</option>
+        <option value="EUR">EUR - Euro</option>
+        <option value="CNY">CNY - Chinese Yuan</option>
+        <option value="JPY">JPY - Japanese Yen</option>
+        <option value="AUD">AUD - Australian Dollar</option>
+        <option value="CAD">CAD - Canadian Dollar</option>
+        <option value="CHF">CHF - Swiss Franc</option>
+        <option value="NZD">NZD - New Zealand Dollar</option>
+      </select>
+    </div>
+
+    <div class="setting-group">
+      <h3>Symbol & Code Mappings</h3>
+      <p class="desc">Link currency symbols or codes (e.g., ¥, RMB) to standard ISO currency codes (e.g., CNY). The
+        right side must be a 3-letter currency code.</p>
+
+      <div id="mappingList"></div>
+
+      <div class="add-row">
+        <input type="text" id="newSymbol" placeholder="Text to match (e.g. ¥)" maxlength="20">
+        <input type="text" id="newCode" placeholder="ISO Code (e.g. CNY)" maxlength="3" style="width: 150px;">
+        <button id="addMappingBtn">Add Mapping</button>
+      </div>
+    </div>
+
+    <div class="setting-group" style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0;">
+      <h3>Site Rules (Domain Override)</h3>
+      <p class="desc">Force a symbol to match a specific currency on certain websites based on their domain (checking if
+        the URL includes your text). These override standard mappings.</p>
+
+      <div id="domainList"></div>
+
+      <div class="add-row">
+        <input type="text" id="newDomain" placeholder="Domain (e.g. .hk)" maxlength="30" style="flex: 2;">
+        <input type="text" id="newDomainSymbol" placeholder="Symbol (e.g. $)" maxlength="10" style="flex: 1;">
+        <input type="text" id="newDomainCode" placeholder="Code (e.g. HKD)" maxlength="3" style="width: 70px;">
+        <button id="addDomainBtn">Add Site Rule</button>
+      </div>
+    </div>
+
+    <button id="saveBtn" class="primary-btn">Save Settings</button>
+    <div id="status"></div>
+  </div>
+  <script src="options.js"></script>
+</body>
+
+</html>
