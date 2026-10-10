@@ -42,3 +42,12 @@
   border-style: solid;
   border-color: #2c3e50 transparent transparent transparent;
 }
+/* Recognised prices with nothing to convert to (same currency as the target, or no rates yet) */
+.coinpal-tooltip.coinpal-inactive {
+  border-bottom: none;
+  cursor: inherit;
+}
+
+.coinpal-tooltip.coinpal-inactive:hover {
+  background-color: transparent;
+}

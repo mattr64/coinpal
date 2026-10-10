@@ -12,6 +12,7 @@
 
     <div class="setting-group">
       <label for="targetCurrency">Target Currency:</label>
+      <!-- Replaced with every currency in the rates feed once rates are available -->
       <select id="targetCurrency">
         <option value="GBP">GBP - British Pound</option>
         <option value="USD">USD - US Dollar</option>
@@ -29,9 +30,10 @@
     <div class="setting-group">
       <h3>Symbol & Code Mappings</h3>
       <p class="desc">Link currency symbols or codes (e.g., ¥, RMB) to standard ISO currency codes (e.g., CNY). The
-        right side must be a 3-letter currency code.</p>
+        right side must be a 3-letter currency code. Built-in mappings can be removed or overridden.</p>
 
       <div id="mappingList"></div>
+      <button id="restoreBuiltinsBtn" class="link-btn" hidden>Restore removed built-in mappings</button>
 
       <div class="add-row">
         <input type="text" id="newSymbol" placeholder="Text to match (e.g. ¥)" maxlength="20">
@@ -58,6 +60,7 @@
     <button id="saveBtn" class="primary-btn">Save Settings</button>
     <div id="status"></div>
   </div>
+  <script src="defaults.js"></script>
   <script src="options.js"></script>
 </body>
 
