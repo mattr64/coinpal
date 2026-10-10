@@ -3,7 +3,10 @@ const defaultMappings = {
   'RMB': 'CNY',
   '$': 'USD',
   '£': 'GBP',
-  '€': 'EUR'
+  '€': 'EUR',
+  '₩': 'KRW',
+  '￦': 'KRW',
+  '원': 'KRW'
 };
 
 let currentMappings = {};
@@ -115,7 +118,7 @@ function addDomainRule() {
 
 function saveOptions() {
   const targetCurrency = document.getElementById('targetCurrency').value;
-  const codesSet = new Set(['CNY', 'USD', 'EUR', 'GBP']);
+  const codesSet = new Set(['CNY', 'USD', 'EUR', 'GBP', 'KRW']);
 
   for (const val of Object.values(currentMappings)) {
     codesSet.add(val);

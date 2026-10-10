@@ -91,7 +91,9 @@ function processTextNode(node) {
   // Group 1: Prefix indicator
   // Group 2: Amount
   // Group 3: Suffix indicator
-  const regexStr = `(?<![a-zA-Z0-9])(?:(${indicators})\\s*)?(\\d{1,3}(?:[.,]\\d{3})*(?:[.,]\\d{1,3})?|\\d+(?:[.,]\\d{1,3})?)(?:\\s*(${indicators}))?(?![a-zA-Z0-9])`;
+  // A prefix indicator must not follow a letter/digit; a bare number only must not follow a digit/separator,
+  // so text like "From393,855KRW" matches the whole amount rather than "855KRW".
+  const regexStr = `(?:(?<![a-zA-Z0-9])(${indicators})\\s*|(?<![\\d.,]))(\\d{1,3}(?:[.,]\\d{3})*(?:[.,]\\d{1,3})?|\\d+(?:[.,]\\d{1,3})?)(?:\\s*(${indicators}))?(?![a-zA-Z0-9])`;
   const regex = new RegExp(regexStr, 'gi');
   // 'g' for exact global, 'i' to match codes case insensitively
 

@@ -28,9 +28,12 @@ chrome.runtime.onInstalled.addListener(async (details) => {
         'RMB': 'CNY',
         '$': 'USD',
         '£': 'GBP',
-        '€': 'EUR'
+        '€': 'EUR',
+        '₩': 'KRW',
+        '￦': 'KRW',
+        '원': 'KRW'
       },
-      textCodes: ['CNY', 'USD', 'EUR', 'GBP', 'RMB']
+      textCodes: ['CNY', 'USD', 'EUR', 'GBP', 'RMB', 'KRW']
     });
   }
   // Initial fetch
