@@ -160,6 +160,8 @@ function processTextNode(node) {
   const tag = parent.tagName.toLowerCase();
   if (['script', 'style', 'noscript', 'textarea', 'code', 'input', 'select', 'option'].includes(tag)) return;
   if (parent.classList && parent.classList.contains('coinpal-tooltip')) return;
+  // Leave text being edited alone (email composers, rich text editors) so we never alter what's typed
+  if (parent.isContentEditable || document.designMode === 'on') return;
 
   const text = node.nodeValue;
   if (!text || !text.trim()) return;
