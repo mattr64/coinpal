@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Coiner",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Converts currency on hover with an unobtrusive tooltip.",
   "icons": {
     "48": "icons/icon-48.png",
@@ -13,6 +13,7 @@
   ],
   "background": {
     "scripts": [
+      "defaults.js",
       "background.js"
     ]
   },
@@ -22,6 +23,7 @@
         "<all_urls>"
       ],
       "js": [
+        "defaults.js",
         "content.js"
       ],
       "css": [
@@ -33,9 +35,6 @@
     "page": "options.html",
     "open_in_tab": true
   },
-  "host_permissions": [
-    "https://api.frankfurter.app/*"
-  ],
   "browser_specific_settings": {
     "gecko": {
       "id": "matt@deadpxl.dev",
